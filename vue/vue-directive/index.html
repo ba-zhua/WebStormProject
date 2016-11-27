@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../lib/vue.js"></script>
+    <title>vue-directive</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <input v-wos:val.red.border="num"/>
+    </div>
+
+    <script>
+        Vue.directive('wos',{
+           bind:function(value){
+               this.el.style.color="#ff6600";
+           },
+            update:function(nVal,oVal){
+
+            },
+            unbind:function(){
+
+            }
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                message:'hello world',
+                num:'1'
+            }
+        })
+    </script>
+</body>
+</html>

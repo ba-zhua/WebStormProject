@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../lib/vue.js"></script>
+    <title>vue-for</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="todo in todos">
+                {{todo.text}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue ({
+            el:'#app',
+            data:{
+                todos:[
+                    {'text':'111'},
+                    {'text':'222'},
+                    {'text':'333'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../lib/vue.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="app" v-html="html">
+
+    </div>
+
+    <div id="app2">
+        <p>{{message}}</p>
+        <p>{{reversedMessage}}</p>
+    </div>
+
+    <div id="app3">
+        <p>{{date}}</p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                html:'<p>hello</p>'
+            }
+        })
+
+        var app2 = new Vue({
+            el:'#app2',
+            data:{
+                message:'hello'
+            },
+            computed:{
+                reversedMessage:function(){
+                    return this.message.split("").reverse().join("");
+                }
+            }
+        })
+
+        var app3 = new Vue({
+            el:'#app3',
+            data:{
+                date:Date.now()
+            }
+        })
+    </script>
+</body>
+</html>
